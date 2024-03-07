@@ -1,5 +1,5 @@
 
-#include "process_numbers.h"
+#include "process_numbers.hpp"
 #include <algorithm>
 #include <iterator>
 #include <ranges>
