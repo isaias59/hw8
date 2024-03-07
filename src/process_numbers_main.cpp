@@ -1,4 +1,4 @@
-#include "process_numbers.h"
+#include "process_numbers.hpp"
 #include <fstream>
 #include <iostream>
 #include <vector>
