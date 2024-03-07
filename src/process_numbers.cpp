@@ -1,19 +1,17 @@
-
-#include "process_numbers.hpp"
+#include "process_numbers.h"
+#include <vector>
 #include <algorithm>
 #include <iterator>
 #include <ranges>
 
-void read_numbers(std::istream& in, std::vector<int>& numbers) {
-    std::ranges::copy(std::istream_iterator<int>(in), std::istream_iterator<int>(), std::back_inserter(numbers));
-    std::ranges::sort(numbers);
-}
+void split_odd_even(std::istream& numbers, std::ostream& odds, std::ostream& evens) {
+    std::vector<int> nums;
 
-void write_odds(const std::vector<int>& numbers, std::ostream& out) {
-    std::ranges::copy_if(numbers, std::ostream_iterator<int>(out, " "), [](int n) { return n % 2 != 0; });
-    out << '\n';
-}
+    std::ranges::copy(std::istream_iterator<int>(numbers), std::istream_iterator<int>(), std::back_inserter(nums));
+    std::ranges::sort(nums);
 
-void write_evens(const std::vector<int>& numbers, std::ostream& out) {
-    std::ranges::copy_if(numbers, std::ostream_iterator<int>(out, "\n"), [](int n) { return n % 2 == 0; });
+    std::ranges::copy_if(nums, std::ostream_iterator<int>(odds, " "), [](int n) { return n % 2 != 0; });
+    odds << '\n';
+
+    std::ranges::copy_if(nums, std::ostream_iterator<int>(evens, "\n"), [](int n) { return n % 2 == 0; });
 }
