@@ -1,15 +1,10 @@
-
 #ifndef PROCESS_NUMBERS_HPP
 #define PROCESS_NUMBERS_HPP
 
-#include <vector>
 #include <iosfwd>
-#include <iostream>
-
+#include<iostream>
 using namespace std;
 
-void read_numbers(std::istream& in, std::vector<int>& numbers);
-void write_odds(const std::vector<int>& numbers, std::ostream& out);
-void write_evens(const std::vector<int>& numbers, std::ostream& out);
+void split_odd_even(std::istream& numbers, std::ostream& odds, std::ostream& evens);
 
-#endif // PROCESS_NUMBERS_HPP
+#endif 
